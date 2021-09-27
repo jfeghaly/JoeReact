@@ -15,11 +15,15 @@ export default class Counter extends Component {
         classes += this.state.count === 0 ? "warning" : "primary";
         return classes
       }
+    handleIncrement = () =>{
+        console.log(this.state.count);
+        this.setState({count: this.state.count+1});
+    }
     render() {
         return (
             <>
                 <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button className="btn btn-secondary btn-sm">+</button>
+                <button className="btn btn-secondary btn-sm" onClick={this.handleIncrement}>+</button>
             </>
         )
     }
